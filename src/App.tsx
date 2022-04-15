@@ -1,7 +1,7 @@
 import React from 'react';
 
 const App: React.FC = () => {
-  const message: string = 'Template';
+  const message: string = 'Template Test';
   return <div className="App">{message}</div>;
 };
 
