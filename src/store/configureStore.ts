@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import exampleReducer from '../modules/example/exampleSlice';
+import settingReducer from '../modules/setting/settingSlice';
 
 export const store = configureStore({
   reducer: {
     example: exampleReducer,
+    setting: settingReducer,
   },
 });
 
