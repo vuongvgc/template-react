@@ -1,4 +1,5 @@
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+import './styles/index.scss';
 
 import React from 'react';
 import { IntlProvider } from 'react-intl';
