@@ -1,10 +1,16 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { call, put, takeEvery } from 'redux-saga/effects';
+
+import { createAction, createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+import api from '../../core/api/api';
 
 export interface ICounterState {
   value: number;
+  productList: any;
 }
 const initialState: ICounterState = {
   value: 0,
+  productList: [],
 };
 
 export const counterSlice = createSlice({
@@ -21,8 +27,25 @@ export const counterSlice = createSlice({
       ...state,
       value: action.payload,
     }),
+    productList: (state, action: PayloadAction<any>) => ({ ...state, productList: action.payload }),
   },
 });
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
-export default counterSlice.reducer;
+export const { increment, decrement, incrementByAmount, productList } = counterSlice.actions;
+
+export const exampleReducer = counterSlice.reducer;
+
+export const getProductsAsync = createAction('example/getProducts');
+
+export function* getProductsSaga(): any {
+  const product = yield call(() => api.get('products'));
+  yield put(productList(product.data));
+}
+export function* watchGetProduct(): any {
+  console.debug('run');
+  yield takeEvery(getProductsAsync, getProductsSaga);
+}
+
+export function* helloSaga(): Generator<any, void, unknown> {
+  yield console.debug('Run hello Saga');
+}

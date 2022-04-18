@@ -5,8 +5,8 @@ import { IntlProvider } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
+import { RootState } from './core/store/configureStore';
 import locale from './locale';
-import { RootState } from './store/configureStore';
 import Example from './view/Example';
 import Homepage from './view/Homepage';
 import PageNotFound from './view/PageNotFound';

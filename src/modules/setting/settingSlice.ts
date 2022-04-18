@@ -19,4 +19,4 @@ export const settingSlice = createSlice({
 });
 
 export const { changeLanguage } = settingSlice.actions;
-export default settingSlice.reducer;
+export const settingReducer = settingSlice.reducer;

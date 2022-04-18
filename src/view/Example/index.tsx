@@ -3,10 +3,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import api from '../../core/api/api';
-import { decrement, increment, incrementByAmount } from '../../modules/example/exampleSlice';
+import { RootState } from '../../core/store/configureStore';
+import {
+    decrement, getProductsAsync, increment, incrementByAmount
+} from '../../modules/example/exampleSlice';
 import ChangeLanguage from '../../shared/components/ChangeLanguage';
 import { useTranslate } from '../../shared/hook/useTranslate';
-import { RootState } from '../../store/configureStore';
 
 const Example: React.FC = () => {
   const dispatch = useDispatch();
@@ -27,6 +29,7 @@ const Example: React.FC = () => {
       {formatMessage('common.save')}
       <ChangeLanguage />
       <Button onClick={exampleAPI}>Call API</Button>
+      <Button onClick={() => dispatch(getProductsAsync())}>Call API store</Button>
     </div>
   );
 };
