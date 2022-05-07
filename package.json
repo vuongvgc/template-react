@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false && react-scripts build",
     "prettier": "prettier --write src/**/*.ts{,x}",
     "postinstall": "husky install",
     "lint:fix": "tsc --noEmit && eslint src/**/*.ts{,x} --fix",
