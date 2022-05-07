@@ -30,8 +30,8 @@ jobs:
         run: | 
           npm install
           npm run-script build
-      - name:  Build and Deloy
-        uses: vuongDo/github-pages-action@releases/v3
+      - name: Build and Deloy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
           BASE_BRANCH: master
