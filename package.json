@@ -2,7 +2,6 @@
   "name": "template-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vuongvgc.github.io/repository-name",
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@reduxjs/toolkit": "^1.8.1",
@@ -25,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=false && react-scripts build",
+    "build": "react-scripts build",
     "prettier": "prettier --write src/**/*.ts{,x}",
     "postinstall": "husky install",
     "lint:fix": "tsc --noEmit && eslint src/**/*.ts{,x} --fix",
