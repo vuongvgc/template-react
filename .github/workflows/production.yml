@@ -1,6 +1,6 @@
 name: Production workflow
 env: 
-  CI: env: 
+  CI: false 
 on:
   push:
     branches:
